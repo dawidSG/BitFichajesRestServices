@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+/*Route::middleware('auth:empresa')->get('/empresa', function (Request $request) {
+    return $request->empresa();
+});*/
+
+Route::middleware('auth:api')->get('/empleado', function (Request $request) {
+    return $request->empleado();
 });
+
+//Route::resource('empleados', 'Empleado\EmpleadoController', ['except' => ['create','edit']]);
+//Route::resource('empresas', 'Empresa\EmpresaController', ['except' => ['create','edit']]);
+
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});*/

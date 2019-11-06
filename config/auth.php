@@ -43,9 +43,16 @@ return [
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'empleados',
             'hash' => false,
         ],
+
+        'empresa' => [
+            'driver' => 'token',
+            'provider' => 'empresas',
+            'hash' => false,
+        ],
+
     ],
 
     /*
@@ -66,9 +73,14 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'empleados' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Empleado::class,
+        ],
+
+        'empresas' => [
+            'driver' => 'eloquent',
+            'model' => App\Empresa::class,
         ],
 
         // 'users' => [
@@ -93,8 +105,15 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'empleados' => [
+            'provider' => 'empleados',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'empresas' => [
+            'provider' => 'empresas',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
